@@ -1,0 +1,2 @@
+# modernart
+Modern Art Generator
