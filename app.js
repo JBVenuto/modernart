@@ -20,7 +20,7 @@ gridHtml += "'>"
 
 // Build the cells HTML
 for (i = 0; i <= elements; i++) {
-    let cell = `<div class="cell" style="background-color:${colors[colorSelector()]}">.</div>`;
+    let cell = `<div class="cell" style="background-color:${colors[colorSelector()]}"></div>`;
     gridHtml += cell;
 }
 gridHtml += "</div>";

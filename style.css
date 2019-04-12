@@ -1,0 +1,9 @@
+#gridContainer {
+    border: 3px solid black;
+    height: 90vh;
+}
+
+.grid {
+    display: grid;
+    height: 100%
+}
