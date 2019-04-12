@@ -7,16 +7,22 @@ const x = Math.floor(Math.random() * 23) +3;
 // Variable that will be the HTML code
 let gridHtml = "<div class='grid' style='display:grid;grid-template-columns:";
 
+// Function to set the gap between elements
+let randomGap = () => {
+    let i = Math.floor(Math.random() * 3);
+    return i;
+}
+
 // Function to select a color
 let colorSelector = () => {
-    let i = Math.floor(Math.random() * 30);
-    return i;
+    let j = Math.floor(Math.random() * 30);
+    return j;
 }
 
 //Function to set column and row span
 let randomSpan = () => {
-    let j = Math.floor(Math.random() * 3) + 1;
-    return j;
+    let k = Math.floor(Math.random() * 3) + 1;
+    return k;
 }
 
 // Code to build HTML
@@ -24,7 +30,8 @@ let randomSpan = () => {
 for (i = 1; i <= x; i++) {
     gridHtml += " auto"
 }
-gridHtml += "'>"
+// Randomly generate a gap between grid elements
+gridHtml += `; grid-gap:${randomGap()}em'>`;
 
 // Build the cells HTML
 for (i = 0; i <= elements; i++) {
