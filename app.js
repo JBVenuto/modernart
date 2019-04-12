@@ -11,6 +11,12 @@ let colorSelector = () => {
     return i;
 }
 
+//Function to set column and row span
+let randomSpan = () => {
+    let j = Math.floor(Math.random() * 3) + 1;
+    return j;
+}
+
 // Code to build HTML
 // Build CSS to auto format the columns
 for (i = 1; i <= x; i++) {
@@ -20,7 +26,7 @@ gridHtml += "'>"
 
 // Build the cells HTML
 for (i = 0; i <= elements; i++) {
-    let cell = `<div class="cell" style="background-color:${colors[colorSelector()]}"></div>`;
+    let cell = `<div class="cell" style="background-color:${colors[colorSelector()]}; grid-column:span ${randomSpan()}; grid-row:span ${randomSpan()}"></div>`;
     gridHtml += cell;
 }
 gridHtml += "</div>";
