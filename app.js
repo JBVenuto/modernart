@@ -1,9 +1,38 @@
 // Variables that are used
-
+const colors = ["#B2BD7E", "#E9D985", "#749C75", "#6A5D7B", "#5D4A66", "#FFA630", "#4DA1A9", "#2E5077", "#611C35", "#7FB069"];
+const elements = Math.floor(Math.random() * 42) + 4;
+const x = Math.floor(Math.random() * 23) +3;
 // Variable that will be the HTML code
-
+let gridHtml = "<div class='grid' style='display:grid;grid-template-columns:";
 
 // Function to select a color
-
+let colorSelector = () => {
+    let i = Math.floor(Math.random() * 10);
+    return i;
+}
 
 // Code to build HTML
+// Build CSS to auto format the columns
+for (i = 1; i <= x; i++) {
+    gridHtml += " auto"
+}
+gridHtml += "'>"
+
+// Build the cells HTML
+for (i = 0; i <= elements; i++) {
+    let cell = `<div class="cell" style="background-color:${colors[colorSelector()]}">.</div>`;
+    gridHtml += cell;
+}
+gridHtml += "</div>";
+
+console.log(gridHtml);
+
+// Function to print the generated HTML/CSS on the DOM
+printFunction = () => {
+    document.getElementById("gridContainer").innerHTML = gridHtml;
+}
+
+// Event listener for when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    printFunction();
+})
